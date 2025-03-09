@@ -8,6 +8,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/TutorialRoom.unity
+    guid: 8ac4020b709d0e7998dd93424ecf8d51
+  - enabled: 1
+    path: Assets/Scenes/Supermarket.unity
+    guid: 72cf7da8bbf02c04c98a29d124b48cf1
+  - enabled: 1
+    path: Assets/Scenes/DisasterRoom.unity
+    guid: 1683f2c4b27018d418168d77ca84c37a
+  - enabled: 1
+    path: Assets/Scenes/Kitchen.unity
+    guid: 910e21587a849794f81ccfd5dddf401e
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 785feeeefe2dae7db8ddff3467150be0, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
