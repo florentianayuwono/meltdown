@@ -5120,6 +5120,7 @@ MonoBehaviour:
   isOpen: 1
   teleportType: 0
   ConfirmAlertDialog: {fileID: 478632849}
+  confirmationModal: {fileID: 478632857}
 --- !u!20 &1731298971 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 1767192439, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}

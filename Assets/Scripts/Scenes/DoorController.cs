@@ -7,6 +7,7 @@ public class DoorController : MonoBehaviour
     [SerializeField] private bool isOpen;
     [SerializeField] private TeleportationType teleportType;
     [SerializeField] private GameObject ConfirmAlertDialog;
+    [SerializeField] private ConfirmationModal confirmationModal;
 
     public enum TeleportationType
     {
@@ -25,7 +26,16 @@ public class DoorController : MonoBehaviour
 
         // Subscribe to the select event (trigger press)
         interactable.selectEntered.AddListener(OnTriggerPressed);
-        ConfirmAlertDialog.SetActive(false);
+
+        if (confirmationModal != null)
+        {
+            confirmationModal.onConfirm.AddListener(TeleportToSelectedScene);
+        }
+        
+        if (ConfirmAlertDialog != null)
+        {
+            ConfirmAlertDialog.SetActive(false);
+        }
     }
 
     private void OnTriggerPressed(SelectEnterEventArgs args)
