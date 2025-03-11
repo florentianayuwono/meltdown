@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3b0d2ceccf5d1804fb726d141e80fb44
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 118744
+  packageName: Classic Interior Door Pack 1
+  packageVersion: 1.0
+  assetPath: Assets/JJ_InteriorDoorPack_V1/Materials/Frames/mat_intDoor_metalFrame_black.mat
+  uploadId: 246164
