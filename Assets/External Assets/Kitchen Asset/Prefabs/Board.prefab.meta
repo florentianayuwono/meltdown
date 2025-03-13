@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: da39b72aa18fa5e48b10d7ec95000d35
+timeCreated: 1490976823
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 85050
+  packageName: Food and Kitchen Props Pack
+  packageVersion: 1.0
+  assetPath: Assets/Kitchen Asset/Prefabs/Board.prefab
+  uploadId: 170868

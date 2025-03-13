@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 95cb85553a003914f8143e52b614b08f
+timeCreated: 1490976826
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 85050
+  packageName: Food and Kitchen Props Pack
+  packageVersion: 1.0
+  assetPath: Assets/Kitchen Asset/Prefabs/CornFlakes.prefab
+  uploadId: 170868
