@@ -3609,6 +3609,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b546c4c6908a70d438ef89a6dd9c366c, type: 3}
   - {fileID: 8300000, guid: 7ce64d275daea0c48be7a71a7e2bf7c7, type: 3}
   - {fileID: 8300000, guid: ffd7374a1973a0441955595b674ef575, type: 3}
+  - {fileID: 8300000, guid: d0ad9e1fd90ba4a4c8fa5201a588ce75, type: 3}
   fadeInDuration: 2
   fadeOutDuration: 2
 --- !u!82 &1094229808

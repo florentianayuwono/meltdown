@@ -5,6 +5,7 @@ public enum SoundType {
     DOOR_OPEN, 
     SUPERMARKET_ANNOUCEMENT, 
     SUPERMARKET_MUSIC, 
+    SUPERMARKET_SCANNER,
     BUTTON_CLICK 
 }
 
