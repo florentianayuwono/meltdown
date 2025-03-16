@@ -28,7 +28,6 @@ public class Scanner : MonoBehaviour
         if (Physics.Raycast(transform.position, Quaternion.Euler(0, -90, 0) * transform.forward, out hit, scanDistance, foodLayer))
         {
             currentTarget = hit.collider.gameObject;
-            Debug.Log("Hit: " + hit.collider.gameObject.name);
         }
         else
         {
