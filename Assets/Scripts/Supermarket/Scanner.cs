@@ -11,6 +11,15 @@ public class Scanner : MonoBehaviour
     public LayerMask foodLayer;
     
     private GameObject currentTarget;
+    private Vector3 originalPosition;
+    private Quaternion originalRotation;
+
+    void Awake()
+    {
+        // Store the original position and rotation when the object is created
+        originalPosition = transform.position;
+        originalRotation = transform.rotation;
+    }
     
     void Start()
     {
@@ -82,6 +91,50 @@ public class Scanner : MonoBehaviour
                     field.SetValue(pokeInteractor, 0); // 0 = StateChange in enum
                 }
             }
+        }
+        StartCoroutine(ReturnToPosition());
+    }
+
+    private IEnumerator ReturnToPosition()
+    {
+        // Make sure any physics interactions are disabled during the return
+        Rigidbody rb = GetComponent<Rigidbody>();
+        bool wasKinematic = false;
+        
+        if (rb != null)
+        {
+            wasKinematic = rb.isKinematic;
+            rb.isKinematic = true;
+        }
+        
+        // Animate the return over a short time
+        float duration = 0.3f;
+        float elapsed = 0;
+        
+        Vector3 startPosition = transform.position;
+        Quaternion startRotation = transform.rotation;
+        
+        while (elapsed < duration)
+        {
+            float t = elapsed / duration;
+            // Use smoothstep or other easing function for smoother motion
+            float smoothT = t * t * (3f - 2f * t);
+            
+            transform.position = Vector3.Lerp(startPosition, originalPosition, smoothT);
+            transform.rotation = Quaternion.Slerp(startRotation, originalRotation, smoothT);
+            
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+        
+        // Ensure it ends exactly at the original position
+        transform.position = originalPosition;
+        transform.rotation = originalRotation;
+        
+        // Restore the original rigidbody settings
+        if (rb != null)
+        {
+            rb.isKinematic = wasKinematic;
         }
     }
     
