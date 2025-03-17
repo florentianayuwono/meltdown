@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class Scanner : MonoBehaviour
 {
@@ -13,17 +14,79 @@ public class Scanner : MonoBehaviour
     
     void Start()
     {
-        UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable grabInteractable = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
-        if (grabInteractable != null)
+        var interactable = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRBaseInteractable>();
+        if (interactable != null)
         {
-            grabInteractable.activated.AddListener(x => StartScanning());
-            grabInteractable.deactivated.AddListener(x => StopScanning());
+            // Add listeners for selection events
+            interactable.selectEntered.AddListener(OnSelectEnter);
+            interactable.selectExited.AddListener(OnSelectExit);
+            
+            // Keep the activation listeners for scanning functionality
+            var grabInteractable = interactable as UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable;
+            if (grabInteractable != null)
+            {
+                grabInteractable.activated.AddListener(x => StartScanning());
+                grabInteractable.deactivated.AddListener(x => StopScanning());
+            }
+        }
+    }
+    
+    private void OnSelectEnter(SelectEnterEventArgs args)
+    {
+        // Get the interactor from the args
+        var interactor = args.interactorObject as UnityEngine.XR.Interaction.Toolkit.Interactors.XRBaseInteractor;
+        if (interactor != null)
+        {
+            // For newer XR Interaction Toolkit versions
+            if (interactor.GetType().GetProperty("selectActionTrigger") != null)
+            {
+                // Use reflection to set the property if it exists
+                interactor.GetType().GetProperty("selectActionTrigger").SetValue(interactor, 3);
+            }
+            
+            // For poke interactors or other types
+            if (interactor is UnityEngine.XR.Interaction.Toolkit.Interactors.XRPokeInteractor pokeInteractor)
+            {
+                // Set appropriate properties for the poke interactor to make it sticky
+                var field = pokeInteractor.GetType().GetField("m_SelectActionTrigger", 
+                    System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+                if (field != null)
+                {
+                    field.SetValue(pokeInteractor, 3); 
+                }
+            }
+        }
+    }
+    
+    private void OnSelectExit(SelectExitEventArgs args)
+    {
+        // Get the interactor from the args
+        var interactor = args.interactorObject as UnityEngine.XR.Interaction.Toolkit.Interactors.XRBaseInteractor;
+        if (interactor != null)
+        {
+            // For newer XR Interaction Toolkit versions
+            if (interactor.GetType().GetProperty("selectActionTrigger") != null)
+            {
+                // Use reflection to set the property if it exists
+                interactor.GetType().GetProperty("selectActionTrigger").SetValue(interactor, 0); // 0 = StateChange in enum
+            }
+            
+            // For poke interactors or other types
+            if (interactor is UnityEngine.XR.Interaction.Toolkit.Interactors.XRPokeInteractor pokeInteractor)
+            {
+                // Reset appropriate properties for the poke interactor
+                var field = pokeInteractor.GetType().GetField("m_SelectActionTrigger", 
+                    System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+                if (field != null)
+                {
+                    field.SetValue(pokeInteractor, 0); // 0 = StateChange in enum
+                }
+            }
         }
     }
     
     void Update()
     {
-        
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Quaternion.Euler(0, -90, 0) * transform.forward, out hit, scanDistance, foodLayer))
         {
@@ -33,7 +96,6 @@ public class Scanner : MonoBehaviour
         {
             currentTarget = null;
         }
-        
     }
 
     public void StartScanning()
