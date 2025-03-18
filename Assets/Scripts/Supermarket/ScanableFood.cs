@@ -6,6 +6,7 @@ public class ScanableFood : MonoBehaviour
 {
     [Tooltip("Material to apply when being scanned")]
     public Material scanningMaterial;
+    [SerializeField] private GameObject[] scanLabels;
     
     private Dictionary<Renderer, Material[]> originalMaterials = new Dictionary<Renderer, Material[]>();
     private bool isBeingScanned = false;
@@ -23,6 +24,12 @@ public class ScanableFood : MonoBehaviour
             {
                 SoundManager.Instance.PlaySound(SoundType.SUPERMARKET_SCANNER);
             }
+
+            // Show scan labels
+            foreach (GameObject scanLabel in scanLabels)
+            {
+                scanLabel.SetActive(true);
+            }
         }
     }
     
@@ -33,6 +40,12 @@ public class ScanableFood : MonoBehaviour
             // Restore original materials
             RestoreOriginalMaterials();
             isBeingScanned = false;
+            
+            // Hide scan labels
+            foreach (GameObject scanLabel in scanLabels)
+            {
+                scanLabel.SetActive(false);
+            }
         }
     }
     
