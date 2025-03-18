@@ -176,5 +176,21 @@ public class Scanner : MonoBehaviour
     public void StopScanning()
     {
         scanningParticles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        // If we have a valid food item target
+        if (currentTarget != null)
+        {
+            // Try to get ScanableFood component from hit object or its parents
+            ScanableFood scanableFood = currentTarget.GetComponent<ScanableFood>();
+            if (scanableFood == null)
+            {
+                scanableFood = currentTarget.GetComponentInParent<ScanableFood>();
+            }
+            
+            // If we found a scanable food, tell it to start scanning
+            if (scanableFood != null)
+            {
+                scanableFood.StopScan();
+            }
+        }
     }
 }
