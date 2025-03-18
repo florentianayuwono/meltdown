@@ -143,10 +143,21 @@ public class Scanner : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Quaternion.Euler(0, -90, 0) * transform.forward, out hit, scanDistance, foodLayer))
         {
+            if (currentTarget != hit.collider.gameObject)
+            {
+                if (currentTarget != null)
+                {
+                    StopScanning();
+                }
+            }
             currentTarget = hit.collider.gameObject;
         }
         else
         {
+            if (currentTarget != null)
+            {
+                StopScanning();
+            }
             currentTarget = null;
         }
     }
