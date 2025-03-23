@@ -16,7 +16,7 @@ public class DoorController : MonoBehaviour
     public enum TeleportationType
     {
         Supermarket,
-        Kitchen,
+        FoodWasteRoom,
         TutorialRoom,
         DisasterRoom
     }
@@ -81,8 +81,8 @@ public class DoorController : MonoBehaviour
             case TeleportationType.Supermarket:
                 SceneNavigator.Instance.GoToSupermarket();
                 break;
-            case TeleportationType.Kitchen:
-                SceneNavigator.Instance.GoToKitchen();
+            case TeleportationType.FoodWasteRoom:
+                SceneNavigator.Instance.GoToFoodWasteRoom();
                 break;
             case TeleportationType.TutorialRoom:
                 SceneNavigator.Instance.GoToTutorialRoom();
