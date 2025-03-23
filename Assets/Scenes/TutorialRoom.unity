@@ -5754,7 +5754,7 @@ MonoBehaviour:
   supermarketScene:
     asset: {fileID: 102900000, guid: 72cf7da8bbf02c04c98a29d124b48cf1, type: 3}
     guid: 72cf7da8bbf02c04c98a29d124b48cf1
-  kitchenScene:
+  foodWasteRoomScene:
     asset: {fileID: 102900000, guid: 910e21587a849794f81ccfd5dddf401e, type: 3}
     guid: 910e21587a849794f81ccfd5dddf401e
   tutorialRoomScene:
