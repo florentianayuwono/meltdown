@@ -166,7 +166,8 @@ public class SceneNavigator : MonoBehaviour
                 currentSubtitleCanvas = null;
             }
 
-            SoundManager.Instance?.StopBackgroundMusic(true);
+            SoundManager.Instance.StopBackgroundMusic(true);
+            SoundManager.Instance.StopSound();
         }
     }
 }

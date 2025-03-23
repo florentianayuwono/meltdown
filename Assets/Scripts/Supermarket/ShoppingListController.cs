@@ -8,6 +8,10 @@ using UnityEngine.UI;
 
 public class ShoppingListController : MonoBehaviour
 {
+    [Header("Teleportation")]
+    [SerializeField] private GameObject teleportationTarget;
+    [SerializeField] private float transitionDuration = 1.0f;
+
     [Header("UI References")]
     [SerializeField] private Image tomatoImage;
     [SerializeField] private Image eggsImage;
@@ -31,6 +35,11 @@ public class ShoppingListController : MonoBehaviour
         foodImages[FoodItem.Eggs] = eggsImage;
         foodImages[FoodItem.Meat] = meatImage;
         foodImages[FoodItem.Milk] = milkImage;
+
+        if (teleportationTarget != null)
+        {
+            teleportationTarget.SetActive(false);
+        }
     
     }
 
@@ -136,6 +145,8 @@ public class ShoppingListController : MonoBehaviour
             
             // Save the data to a file
             SaveDataToFile();
+
+            ActivateSpecialLightOnly();
         }
     }
 
@@ -195,4 +206,78 @@ public void SaveDataToFile()
         Debug.LogError($"Failed to save data: {e.Message}");
     }
 }
+
+    public void ActivateSpecialLightOnly()
+    {
+        StartCoroutine(TransitionToSpecialLight());
+    }
+
+    private IEnumerator TransitionToSpecialLight()
+    {
+        // First, find and store all lights in the scene
+        Light[] allLights = FindObjectsOfType<Light>();
+        List<Light> otherLights = new List<Light>();
+        List<float> originalIntensities = new List<float>();
+
+        float startTime = Time.time;
+        float elapsedTime = 0f;
+        
+        // Separate the special light from other lights
+        Light specialLight = null;
+        if (teleportationTarget != null)
+        {
+            specialLight = teleportationTarget.GetComponentInChildren<Light>();
+            
+            // Activate the special light object if it was inactive
+            if (!teleportationTarget.activeSelf)
+            {
+                teleportationTarget.SetActive(true);
+            }
+        }
+        
+        // Store all other lights and their original intensities
+        foreach (Light light in allLights)
+        {
+            if (light != specialLight)
+            {
+                otherLights.Add(light);
+                originalIntensities.Add(light.intensity);
+            }
+        }
+        
+        // Gradually fade out other lights while fading in the special light
+        while (elapsedTime < transitionDuration)
+        {
+            elapsedTime = Time.time - startTime;
+            float t = elapsedTime / transitionDuration;
+
+            // Fade in special light
+            if (specialLight != null)
+            {
+                specialLight.intensity = Mathf.Lerp(0f, 10f, t);
+            }
+            
+            // Fade out other lights
+            for (int i = 0; i < otherLights.Count; i++)
+            {
+                if (otherLights[i] != null)
+                {
+                    otherLights[i].intensity = Mathf.Lerp(originalIntensities[i], 0f, t);
+                }
+            }
+            
+            yield return null;
+        }
+        
+        // Ensure all other lights are completely off
+        foreach (Light light in otherLights)
+        {
+            if (light != null)
+            {
+                light.intensity = 0f;
+            }
+        }
+        
+        Debug.Log("All lights turned off except for the special light.");
+    }
 }
