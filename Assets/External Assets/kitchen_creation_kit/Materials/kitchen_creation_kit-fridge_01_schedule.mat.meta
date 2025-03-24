@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 67425559e45d9d94da7a71a2bcf9ec8e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 2854
+  packageName: Kitchen Creation Kit
+  packageVersion: 1.3
+  assetPath: Assets/kitchen_creation_kit/Materials/kitchen_creation_kit-fridge_01_schedule.mat
+  uploadId: 26234

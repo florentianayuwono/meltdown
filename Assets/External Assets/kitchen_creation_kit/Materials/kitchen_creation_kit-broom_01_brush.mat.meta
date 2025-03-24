@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 483c6ed8bc562dc46925a715586cdc3c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 2854
+  packageName: Kitchen Creation Kit
+  packageVersion: 1.3
+  assetPath: Assets/kitchen_creation_kit/Materials/kitchen_creation_kit-broom_01_brush.mat
+  uploadId: 26234

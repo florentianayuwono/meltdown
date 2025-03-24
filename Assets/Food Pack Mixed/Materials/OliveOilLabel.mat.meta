@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 6d607dd79b6133240b50b147ebb9543a
+timeCreated: 1570252390
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 154349
+  packageName: Food Pack Mixed
+  packageVersion: 1.0
+  assetPath: Assets/Food Pack Mixed/Materials/OliveOilLabel.mat
+  uploadId: 332924

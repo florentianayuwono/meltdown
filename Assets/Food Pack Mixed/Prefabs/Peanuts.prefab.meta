@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 43b9e18aca00f72499238be2cbf94caf
+timeCreated: 1568706113
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 154349
+  packageName: Food Pack Mixed
+  packageVersion: 1.0
+  assetPath: Assets/Food Pack Mixed/Prefabs/Peanuts.prefab
+  uploadId: 332924

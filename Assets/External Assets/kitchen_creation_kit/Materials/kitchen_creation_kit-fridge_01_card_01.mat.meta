@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c85b1d8927da53e4b9d9f208bc7efdab
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 2854
+  packageName: Kitchen Creation Kit
+  packageVersion: 1.3
+  assetPath: Assets/kitchen_creation_kit/Materials/kitchen_creation_kit-fridge_01_card_01.mat
+  uploadId: 26234

@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 89b0c4c791ede58448ec68ccd9b6589f
+timeCreated: 1570247526
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 154349
+  packageName: Food Pack Mixed
+  packageVersion: 1.0
+  assetPath: Assets/Food Pack Mixed/Materials/SodaCanBody.mat
+  uploadId: 332924

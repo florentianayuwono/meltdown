@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: bcab62dd50756dd459fd79859b34a0ec
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 2854
+  packageName: Kitchen Creation Kit
+  packageVersion: 1.3
+  assetPath: Assets/kitchen_creation_kit/Materials/fridge_01-fridge_01_condenser.mat
+  uploadId: 26234

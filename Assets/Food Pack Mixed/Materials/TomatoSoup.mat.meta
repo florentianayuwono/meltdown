@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 6d813f7d7a17e744296ccdfd3feeb296
+timeCreated: 1570294245
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 154349
+  packageName: Food Pack Mixed
+  packageVersion: 1.0
+  assetPath: Assets/Food Pack Mixed/Materials/TomatoSoup.mat
+  uploadId: 332924

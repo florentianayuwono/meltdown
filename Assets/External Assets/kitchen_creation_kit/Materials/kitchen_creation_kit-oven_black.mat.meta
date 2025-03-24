@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 40adb61c829b704428a16890970f23c6
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 2854
+  packageName: Kitchen Creation Kit
+  packageVersion: 1.3
+  assetPath: Assets/kitchen_creation_kit/Materials/kitchen_creation_kit-oven_black.mat
+  uploadId: 26234

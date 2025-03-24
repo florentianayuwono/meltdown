@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 420d038d7d481414eb7f5e73de1d7f78
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 2854
+  packageName: Kitchen Creation Kit
+  packageVersion: 1.3
+  assetPath: Assets/kitchen_creation_kit/Materials/kitchen_creation_kit-Material
+    #37.mat
+  uploadId: 26234

@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 68fda1cb16b9f6d40b4e7a16d667240b
+timeCreated: 1568655661
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 154349
+  packageName: Food Pack Mixed
+  packageVersion: 1.0
+  assetPath: Assets/Food Pack Mixed/Materials/CapsicumRed.mat
+  uploadId: 332924

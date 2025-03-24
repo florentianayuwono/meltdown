@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 05773f0adea7d6c4cb50f760d837b462
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 2854
+  packageName: Kitchen Creation Kit
+  packageVersion: 1.3
+  assetPath: Assets/kitchen_creation_kit/Materials/kitchen_creation_kit-chair_01_metal.mat
+  uploadId: 26234

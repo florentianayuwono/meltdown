@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e4a0fc08a3afeda4791232c0654c0387
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 2854
+  packageName: Kitchen Creation Kit
+  packageVersion: 1.3
+  assetPath: Assets/kitchen_creation_kit/Materials/kitchen_creation_kit-oven_top.mat
+  uploadId: 26234

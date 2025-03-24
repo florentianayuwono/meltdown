@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e404bb3262aa9654e80281f295635415
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 2854
+  packageName: Kitchen Creation Kit
+  packageVersion: 1.3
+  assetPath: Assets/kitchen_creation_kit/Materials/kitchen_creation_kit-broom_01_grey.mat
+  uploadId: 26234

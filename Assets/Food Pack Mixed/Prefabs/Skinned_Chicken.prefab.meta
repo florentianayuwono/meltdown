@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 86404d6d44e2f834cbc72d8014f193cf
+timeCreated: 1568652728
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 154349
+  packageName: Food Pack Mixed
+  packageVersion: 1.0
+  assetPath: Assets/Food Pack Mixed/Prefabs/Skinned_Chicken.prefab
+  uploadId: 332924

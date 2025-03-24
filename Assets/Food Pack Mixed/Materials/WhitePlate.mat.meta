@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: e5d1f02f9035efb44a3fcf5e43e16833
+timeCreated: 1568710935
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 154349
+  packageName: Food Pack Mixed
+  packageVersion: 1.0
+  assetPath: Assets/Food Pack Mixed/Materials/WhitePlate.mat
+  uploadId: 332924

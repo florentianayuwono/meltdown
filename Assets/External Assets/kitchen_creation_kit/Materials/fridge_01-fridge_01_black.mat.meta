@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c8bbd12ca3d3fef4a899be3786489751
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 2854
+  packageName: Kitchen Creation Kit
+  packageVersion: 1.3
+  assetPath: Assets/kitchen_creation_kit/Materials/fridge_01-fridge_01_black.mat
+  uploadId: 26234

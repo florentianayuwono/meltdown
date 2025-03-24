@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a69729dc2004d6f459216c73e4efcb97
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 2854
+  packageName: Kitchen Creation Kit
+  packageVersion: 1.3
+  assetPath: Assets/kitchen_creation_kit/Materials/kitchen_creation_kit-bean_01_black.mat
+  uploadId: 26234

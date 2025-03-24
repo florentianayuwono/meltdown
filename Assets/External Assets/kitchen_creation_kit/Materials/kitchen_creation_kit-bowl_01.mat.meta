@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a93831576cdfbf74c9f8e366b112a8af
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 2854
+  packageName: Kitchen Creation Kit
+  packageVersion: 1.3
+  assetPath: Assets/kitchen_creation_kit/Materials/kitchen_creation_kit-bowl_01.mat
+  uploadId: 26234

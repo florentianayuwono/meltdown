@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 17aa30d6af8e8664a82c0fbc89678bec
+timeCreated: 1568787525
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 154349
+  packageName: Food Pack Mixed
+  packageVersion: 1.0
+  assetPath: Assets/Food Pack Mixed/Materials/CanCap.mat
+  uploadId: 332924

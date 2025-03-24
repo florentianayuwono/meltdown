@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 01b73c6adbc49e547a4050d07ce31bca
+timeCreated: 1568696981
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 154349
+  packageName: Food Pack Mixed
+  packageVersion: 1.0
+  assetPath: Assets/Food Pack Mixed/Prefabs/Cheese.prefab
+  uploadId: 332924
