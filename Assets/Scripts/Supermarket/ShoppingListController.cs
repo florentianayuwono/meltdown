@@ -129,7 +129,7 @@ public class ShoppingListController : MonoBehaviour
         bool allDone = true;
         
         // Check if all food items have a status other than NotDone
-        foreach (FoodItem foodItem in Enum.GetValues(typeof(FoodItem)))
+        foreach (FoodItem foodItem in SceneNavigator.foodStatusDict.Keys)
         {
             FoodStatus status = SceneNavigator.Instance.GetFoodStatus(foodItem);
             if (status == FoodStatus.NotDone)

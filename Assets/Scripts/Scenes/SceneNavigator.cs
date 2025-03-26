@@ -10,7 +10,9 @@ public enum FoodItem
     Tomatoes,
     Milk,
     Meat,
-    Eggs
+    Eggs,
+    ChickenBone,
+    Eggshells
 }
 
 public enum FoodStatus
@@ -52,7 +54,7 @@ public class SceneNavigator : MonoBehaviour
     public static SceneNavigator Instance => instance;
 
     // Persistent food state using enums
-    private static Dictionary<FoodItem, FoodStatus> foodStatusDict = new Dictionary<FoodItem, FoodStatus>()
+    public static Dictionary<FoodItem, FoodStatus> foodStatusDict = new Dictionary<FoodItem, FoodStatus>()
     {
         { FoodItem.Tomatoes, FoodStatus.NotDone },
         { FoodItem.Milk, FoodStatus.NotDone },
@@ -103,14 +105,17 @@ public class SceneNavigator : MonoBehaviour
 
     public FoodStatus GetFoodStatus(FoodItem food)
     {
-        return foodStatusDict[food];
+        if (foodStatusDict.ContainsKey(food)) {
+            return foodStatusDict[food];
+        }
+        return FoodStatus.NotDone;
     }
 
     public void SetFoodStatus(FoodItem food, FoodStatus status)
     {
 
         // Only update and trigger event if the status actually changed
-        if (foodStatusDict[food] != status)
+        if (foodStatusDict.ContainsKey(food) && foodStatusDict[food] != status)
         {
             foodStatusDict[food] = status;
 

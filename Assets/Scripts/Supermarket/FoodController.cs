@@ -9,9 +9,11 @@ public class FoodController : MonoBehaviour
     [Header("Food Properties")]
     public bool isCorrectFood;
     public FoodItem foodType;
+    public bool isMeantForTrashBin = false;
 
     [Header("References")]
-    public Transform shoppingCartTransform;
+    public Transform CorrectPlaceToThrow;
+    public Transform IncorrectPlaceToThrow;
     public GameObject confettiPrefab;
     public DisasterEventType eventType;
 
@@ -104,13 +106,19 @@ public class FoodController : MonoBehaviour
     private void OnSelectExit(SelectExitEventArgs args)
     {
         Vector3 foodPos = transform.position;
-        Vector3 cartPos = shoppingCartTransform.position;
+        Vector3 cartPos = CorrectPlaceToThrow.position;
 
         float xThreshold = 0.5f;
         float zThreshold = 0.5f;
 
         bool isAboveCartXZ = Mathf.Abs(foodPos.x - cartPos.x) <= xThreshold &&
                              Mathf.Abs(foodPos.z - cartPos.z) <= zThreshold;
+
+        Vector3 incorrectPlace = IncorrectPlaceToThrow.position;
+
+        bool isAboveIncorrectXZ = Mathf.Abs(foodPos.x - incorrectPlace.x) <= xThreshold &&
+                             Mathf.Abs(foodPos.z - incorrectPlace.z) <= zThreshold;
+
 
         if (isAboveCartXZ)
         {
@@ -122,6 +130,10 @@ public class FoodController : MonoBehaviour
             {
                 HandleIncorrectDrop();
             }
+        }
+        else if (isAboveIncorrectXZ && !isMeantForTrashBin)
+        {
+            HandleIncorrectDrop();
         }
         else
         {

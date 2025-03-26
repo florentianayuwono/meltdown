@@ -345,7 +345,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCorrectFood: 0
   foodType: 2
-  shoppingCartTransform: {fileID: 1849203725}
+  isMeantForTrashBin: 0
+  CorrectPlaceToThrow: {fileID: 1849203725}
+  IncorrectPlaceToThrow: {fileID: 1849203725}
   confettiPrefab: {fileID: 873027640}
   eventType: 3
   successUIText: {fileID: 0}
@@ -5474,7 +5476,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCorrectFood: 0
   foodType: 1
-  shoppingCartTransform: {fileID: 1849203725}
+  isMeantForTrashBin: 0
+  CorrectPlaceToThrow: {fileID: 1849203725}
+  IncorrectPlaceToThrow: {fileID: 1849203725}
   confettiPrefab: {fileID: 873027640}
   eventType: 4
   successUIText: {fileID: 0}
@@ -10118,7 +10122,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCorrectFood: 1
   foodType: 0
-  shoppingCartTransform: {fileID: 1849203725}
+  isMeantForTrashBin: 0
+  CorrectPlaceToThrow: {fileID: 1849203725}
+  IncorrectPlaceToThrow: {fileID: 1849203725}
   confettiPrefab: {fileID: 873027640}
   eventType: 0
   successUIText: {fileID: 1768484317}
@@ -11702,7 +11708,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCorrectFood: 1
   foodType: 1
-  shoppingCartTransform: {fileID: 1849203725}
+  isMeantForTrashBin: 0
+  CorrectPlaceToThrow: {fileID: 1849203725}
+  IncorrectPlaceToThrow: {fileID: 1849203725}
   confettiPrefab: {fileID: 873027640}
   eventType: 0
   successUIText: {fileID: 1768484317}
@@ -13703,7 +13711,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCorrectFood: 0
   foodType: 3
-  shoppingCartTransform: {fileID: 1849203725}
+  isMeantForTrashBin: 0
+  CorrectPlaceToThrow: {fileID: 1849203725}
+  IncorrectPlaceToThrow: {fileID: 1849203725}
   confettiPrefab: {fileID: 873027640}
   eventType: 1
   successUIText: {fileID: 0}
@@ -16641,7 +16651,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCorrectFood: 1
   foodType: 2
-  shoppingCartTransform: {fileID: 1849203725}
+  isMeantForTrashBin: 0
+  CorrectPlaceToThrow: {fileID: 1849203725}
+  IncorrectPlaceToThrow: {fileID: 1849203725}
   confettiPrefab: {fileID: 873027640}
   eventType: 0
   successUIText: {fileID: 1768484317}
@@ -17277,7 +17289,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCorrectFood: 0
   foodType: 0
-  shoppingCartTransform: {fileID: 1849203725}
+  isMeantForTrashBin: 0
+  CorrectPlaceToThrow: {fileID: 1849203725}
+  IncorrectPlaceToThrow: {fileID: 1849203725}
   confettiPrefab: {fileID: 873027640}
   eventType: 2
   successUIText: {fileID: 0}
@@ -17813,7 +17827,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCorrectFood: 1
   foodType: 3
-  shoppingCartTransform: {fileID: 1849203725}
+  isMeantForTrashBin: 0
+  CorrectPlaceToThrow: {fileID: 1849203725}
+  IncorrectPlaceToThrow: {fileID: 1849203725}
   confettiPrefab: {fileID: 873027640}
   eventType: 0
   successUIText: {fileID: 1768484317}
