@@ -47,6 +47,7 @@ public class SceneNavigator : MonoBehaviour
 
     // Time when the player entered the supermarket - for data collection
     public static DateTime? supermarketEntryTime = null;
+    public static DateTime? foodwasteEntryTime = null;
     private static SceneNavigator instance;
     public static SceneNavigator Instance => instance;
 
@@ -60,6 +61,7 @@ public class SceneNavigator : MonoBehaviour
     };
 
     private static bool isAnnouncementPlayed;
+    private static bool isFoodWasteRoomAnnouncementPlayed;
 
     private void Awake()
     {
@@ -204,6 +206,36 @@ public class SceneNavigator : MonoBehaviour
             SoundManager.Instance.StopSound();
             SoundManager.Instance.PlayBackgroundMusic(SoundType.END_MUSIC, true);
             SoundManager.Instance.PlaySound(SoundType.END_AUDIO, 2f);
+        } else if (sceneRef == foodWasteRoomScene)
+        {
+            if (!foodwasteEntryTime.HasValue)
+            {
+                foodwasteEntryTime = DateTime.Now;
+                Debug.Log("User entered food waste room at: " + foodwasteEntryTime.Value);
+            }
+            SoundManager.Instance.StopBackgroundMusic(true);
+            SoundManager.Instance.StopSound();
+            SoundManager.Instance.PlaySound(SoundType.FOODWASTE_ANNOUNCEMENT, 2f);
+            if (!isFoodWasteRoomAnnouncementPlayed)
+            {
+                isFoodWasteRoomAnnouncementPlayed = true;
+                currentSubtitleCanvas = Instantiate(subtitleCanvasPrefab);
+
+                SubtitleLine[] subtitleLines = new SubtitleLine[]
+                {
+                    new SubtitleLine { text = "Time to tidy up!", startTime = 0.0f, duration = 1.0f },
+                    new SubtitleLine { text = "Not all waste is trash", startTime = 1.0f, duration = 1.5f },
+                    new SubtitleLine { text = "—sort wisely, and let’s turn scraps into something useful.", startTime = 2.5f, duration = 4.0f }
+                };
+
+                var subtitleDisplay = currentSubtitleCanvas.GetComponent<SubtitleDisplay>();
+                subtitleDisplay?.SetSubtitles(subtitleLines);
+                subtitleDisplay?.ShowSubtitles();
+
+                AudioClip announcementClip = SoundManager.Instance.GetSoundClip(SoundType.FOODWASTE_ANNOUNCEMENT);
+                if (announcementClip != null)
+                    yield return new WaitForSeconds(announcementClip.length + 0.5f);
+            }
         }
         else
         {

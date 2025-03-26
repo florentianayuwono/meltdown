@@ -8,17 +8,8 @@ public class SubtitleDisplay : MonoBehaviour
     [SerializeField] private TextMeshProUGUI subtitleText;
     [SerializeField] private GameObject subtitlePanel;
     [SerializeField] private Image subtitleBackground;
-    
-    [System.Serializable]
-    public class SubtitleLine
-    {
-        public string text;
-        public float startTime;
-        public float duration;
-    }
-    
-    [SerializeField] private SubtitleLine[] subtitleLines;
-    
+
+    public SubtitleLine[] subtitleLines;
     
     private void Awake()
     {
@@ -43,16 +34,15 @@ public class SubtitleDisplay : MonoBehaviour
 
         ApplyTextStyling();        
     }
-    
-    private void Start()
-    {
-        // // Position in front of camera
-        // PositionInFrontOfCamera();
-    }
 
     private void LateUpdate()
     {
         FollowUserGaze();
+    }
+
+    public void SetSubtitles(SubtitleLine[] newSubtitles)
+    {
+        subtitleLines = newSubtitles;
     }
 
     private void FollowUserGaze()
@@ -73,25 +63,6 @@ public class SubtitleDisplay : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(transform.position - mainCamera.transform.position);
         }
     }
-    
-// private void PositionInFrontOfCamera()
-// {
-//     Camera mainCamera = Camera.main;
-//     if (mainCamera != null)
-//     {
-//         // Calculate forward and down vectors
-//         Vector3 forward = mainCamera.transform.forward;
-//         Vector3 down = -mainCamera.transform.up;
-        
-//         // Position canvas forward and downward from the camera
-//         // The 2f is the forward distance, 0.5f is the downward offset (adjust as needed)
-//         transform.position = mainCamera.transform.position + forward * 2f + down * 0.5f;
-        
-//         // Make the canvas face the camera
-//         transform.rotation = Quaternion.LookRotation(
-//             mainCamera.transform.position - transform.position);
-//     }
-// }
     
     public void ShowSubtitles()
     {
