@@ -216,6 +216,7 @@ public class SceneNavigator : MonoBehaviour
             SoundManager.Instance.StopBackgroundMusic(true);
             SoundManager.Instance.StopSound();
             SoundManager.Instance.PlaySound(SoundType.FOODWASTE_ANNOUNCEMENT, 2f);
+            SoundManager.Instance.PlayBackgroundMusic(SoundType.FOODWASTE_MUSIC, true);
             if (!isFoodWasteRoomAnnouncementPlayed)
             {
                 isFoodWasteRoomAnnouncementPlayed = true;

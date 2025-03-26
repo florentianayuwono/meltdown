@@ -15,7 +15,8 @@ public enum SoundType
     WRONG_EGGS_AUDIO,
     END_MUSIC,
     END_AUDIO,
-    FOODWASTE_ANNOUNCEMENT
+    FOODWASTE_ANNOUNCEMENT,
+    FOODWASTE_MUSIC
 }
 
 [RequireComponent(typeof(AudioSource))]
