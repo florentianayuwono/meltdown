@@ -37,6 +37,7 @@ public class SceneNavigator : MonoBehaviour
     [SerializeField] private SceneReference foodWasteRoomScene;
     [SerializeField] private SceneReference tutorialRoomScene;
     [SerializeField] private SceneReference disasterRoomScene;
+    [SerializeField] private SceneReference endScene;
     [SerializeField] private GameObject subtitleCanvasPrefab;
 
     public static DisasterEventType DISASTER_EVENT_TYPE;
@@ -85,6 +86,11 @@ public class SceneNavigator : MonoBehaviour
     public void GoToTutorialRoom()
     {
         LoadScene(tutorialRoomScene);
+    }
+
+    public void GoToEndScene()
+    {
+        LoadScene(endScene);
     }
 
     public void GoToDisasterRoom(DisasterEventType eventType)
@@ -191,6 +197,13 @@ public class SceneNavigator : MonoBehaviour
                 default:
                     break;
             }
+        }
+        else if (sceneRef == endScene)
+        {
+            SoundManager.Instance.StopBackgroundMusic(true);
+            SoundManager.Instance.StopSound();
+            SoundManager.Instance.PlayBackgroundMusic(SoundType.END_MUSIC, true);
+            SoundManager.Instance.PlaySound(SoundType.END_AUDIO, 2f);
         }
         else
         {

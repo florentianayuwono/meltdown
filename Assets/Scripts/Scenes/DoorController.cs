@@ -18,7 +18,8 @@ public class DoorController : MonoBehaviour
         Supermarket,
         FoodWasteRoom,
         TutorialRoom,
-        DisasterRoom
+        DisasterRoom,
+        EndScene
     }
 
     void Awake()
@@ -89,6 +90,9 @@ public class DoorController : MonoBehaviour
                 break;
             case TeleportationType.DisasterRoom:
                 SceneNavigator.Instance.GoToDisasterRoom(DisasterEventType.NONE);
+                break;
+            case TeleportationType.EndScene:
+                SceneNavigator.Instance.GoToEndScene();
                 break;
         }
     }

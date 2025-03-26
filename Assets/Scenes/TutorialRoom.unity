@@ -4106,6 +4106,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8e134812b633844f085bca866de177e9, type: 3}
   - {fileID: 8300000, guid: 8687173d288c34322b609366fc444255, type: 3}
   - {fileID: 8300000, guid: 6220b388ca72846b6afbd3866d7b4eb8, type: 3}
+  - {fileID: 8300000, guid: 0bdcfd221a8cce8458f982a1aa1c2690, type: 3}
+  - {fileID: 8300000, guid: 6220b388ca72846b6afbd3866d7b4eb8, type: 3}
+  - {fileID: 8300000, guid: 6220b388ca72846b6afbd3866d7b4eb8, type: 3}
   fadeInDuration: 2
   fadeOutDuration: 2
 --- !u!82 &1094229808
@@ -5920,6 +5923,9 @@ MonoBehaviour:
   disasterRoomScene:
     asset: {fileID: 102900000, guid: 1683f2c4b27018d418168d77ca84c37a, type: 3}
     guid: 1683f2c4b27018d418168d77ca84c37a
+  endScene:
+    asset: {fileID: 102900000, guid: a36f6f0566c0fcf47a3bc051b17c1b56, type: 3}
+    guid: a36f6f0566c0fcf47a3bc051b17c1b56
   subtitleCanvasPrefab: {fileID: 2806051734686397139, guid: 529dcfd56940ef1499ec2f2e8182c337, type: 3}
 --- !u!4 &1966179019
 Transform:

@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FoodWasteRoom.unity
     guid: 910e21587a849794f81ccfd5dddf401e
+  - enabled: 1
+    path: Assets/Scenes/EndScene.unity
+    guid: a36f6f0566c0fcf47a3bc051b17c1b56
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 785feeeefe2dae7db8ddff3467150be0, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
