@@ -12,7 +12,8 @@ public enum FoodItem
     Meat,
     Eggs,
     ChickenBone,
-    Eggshells
+    Eggshells,
+    CoffeeGrounds
 }
 
 public enum FoodStatus
