@@ -19,7 +19,8 @@ public enum SoundType
     FOODWASTE_MUSIC,
     WRONG_COFFEE_GROUNDS_AUDIO,
     WRONG_EGGSHELLS_AUDIO,
-    WRONG_VEG_FRUIT_WASTE_AUDIO
+    WRONG_VEG_FRUIT_WASTE_AUDIO,
+    DOOR_OPEN_VOICE
 }
 
 [RequireComponent(typeof(AudioSource))]

@@ -141,6 +141,9 @@ public class ShoppingListController : MonoBehaviour
             ResultsManager.Instance?.StopTrackingSupermarketTime();
 
             ActivateSpecialLightOnly();
+
+            // Play door open voice after 1 second
+            StartCoroutine(PlayDoorOpenVoice());
         }
     }
 
@@ -216,5 +219,11 @@ public class ShoppingListController : MonoBehaviour
         }
 
         Debug.Log("All lights turned off except for the special light.");
+    }
+
+    private IEnumerator PlayDoorOpenVoice()
+    {
+        yield return new WaitForSeconds(1.0f);
+        SoundManager.Instance.PlaySound(SoundType.DOOR_OPEN_VOICE);
     }
 }

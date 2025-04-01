@@ -57,11 +57,19 @@ public class FoodWasteCompletionChecker : MonoBehaviour
             ResultsManager.Instance.StopTrackingFoodWasteTime();
             Debug.Log("All food waste room items have been processed! GameObject activated.");
             ActivateSpecialLightOnly();
+            // play door open voice after 1 seconds
+            StartCoroutine(PlayDoorOpenVoice());
         }
     }
     public void ActivateSpecialLightOnly()
     {
         StartCoroutine(TransitionToSpecialLight());
+    }
+
+    private IEnumerator PlayDoorOpenVoice()
+    {
+        yield return new WaitForSeconds(1.0f);
+        SoundManager.Instance.PlaySound(SoundType.DOOR_OPEN_VOICE);
     }
 
     private IEnumerator TransitionToSpecialLight()
