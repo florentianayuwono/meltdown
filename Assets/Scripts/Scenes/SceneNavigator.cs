@@ -272,8 +272,6 @@ public class SceneNavigator : MonoBehaviour
                 foodwasteEntryTime = DateTime.Now;
                 Debug.Log("User entered food waste room at: " + foodwasteEntryTime.Value);
 
-                currentSubtitleCanvas = Instantiate(subtitleCanvasPrefab);
-
                 SubtitleLine[] subtitleLines = new SubtitleLine[]
                 {
                     new SubtitleLine { text = "Time to tidy up!", startTime = 0.0f, duration = 1.0f },
@@ -281,9 +279,7 @@ public class SceneNavigator : MonoBehaviour
                     new SubtitleLine { text = "—sort wisely, and let’s turn scraps into something useful.", startTime = 2.5f, duration = 4.0f }
                 };
 
-                var subtitleDisplay = currentSubtitleCanvas.GetComponent<SubtitleDisplay>();
-                subtitleDisplay?.SetSubtitles(subtitleLines);
-                subtitleDisplay?.ShowSubtitles();
+                ShowSubtitleCanvas(subtitleLines);
 
                 SoundManager.Instance.PlaySound(SoundType.FOODWASTE_ANNOUNCEMENT, 2f);
             }
@@ -315,5 +311,13 @@ public class SceneNavigator : MonoBehaviour
             SoundManager.Instance.StopBackgroundMusic(true);
             SoundManager.Instance.StopSound();
         }
+    }
+
+    public void ShowSubtitleCanvas(SubtitleLine[] subtitleLines)
+    {
+        currentSubtitleCanvas = Instantiate(subtitleCanvasPrefab);
+        var subtitleDisplay = currentSubtitleCanvas.GetComponent<SubtitleDisplay>();
+        subtitleDisplay?.SetSubtitles(subtitleLines);
+        subtitleDisplay?.ShowSubtitles();
     }
 }

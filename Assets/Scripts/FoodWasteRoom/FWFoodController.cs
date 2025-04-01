@@ -10,6 +10,7 @@ public class FWFoodController : MonoBehaviour
     [Header("References")]
     public Transform CorrectPlaceToThrow;
     public Transform IncorrectPlaceToThrow;
+    public Transform[] IncorrectPlacements;
     public GameObject confettiPrefab;
     public DisasterEventType eventType;
 
@@ -105,6 +106,25 @@ public class FWFoodController : MonoBehaviour
         }
         else
         {
+            bool isAboveAnyIncorrect = false;
+            foreach (Transform incorrectPlacement in IncorrectPlacements)
+            {
+                Vector3 incorrectPos = incorrectPlacement.position;
+                if (Mathf.Abs(foodPos.x - incorrectPos.x) <= xThreshold &&
+                    Mathf.Abs(foodPos.z - incorrectPos.z) <= zThreshold)
+                {
+                    isAboveAnyIncorrect = true;
+                    break;
+                }
+            }
+            if (isAboveAnyIncorrect)
+            {
+                SubtitleLine[] subtitleLines = new SubtitleLine[]
+                {
+                    new SubtitleLine { text = "Oops wrong spot, try look around?", startTime = 0.0f, duration = 2.0f }
+                };
+                SceneNavigator.Instance?.ShowSubtitleCanvas(subtitleLines);
+            }
             StartCoroutine(ReturnToOriginalPosition());
         }
     }
