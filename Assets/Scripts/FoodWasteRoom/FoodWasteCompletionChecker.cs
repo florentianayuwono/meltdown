@@ -69,7 +69,7 @@ public class FoodWasteCompletionChecker : MonoBehaviour
     private IEnumerator PlayDoorOpenVoice()
     {
         yield return new WaitForSeconds(1.0f);
-        SoundManager.Instance.PlaySound(SoundType.DOOR_OPEN_VOICE);
+        SoundManager.Instance.PlaySound(SoundType.DOOR_OPEN_VOICE, 2f);
     }
 
     private IEnumerator TransitionToSpecialLight()

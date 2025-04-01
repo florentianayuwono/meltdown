@@ -96,11 +96,11 @@ public class SoundManager : MonoBehaviour
         {
             bgmAudioSource.volume = 0f;
             bgmAudioSource.Play();
-            fadeCoroutine = StartCoroutine(FadeAudioSource(bgmAudioSource, fadeInDuration, 1f));
+            fadeCoroutine = StartCoroutine(FadeAudioSource(bgmAudioSource, fadeInDuration, 0.8f));
         }
         else
         {
-            bgmAudioSource.volume = 1f;
+            bgmAudioSource.volume = 0.8f;
             bgmAudioSource.Play();
         }
     }
