@@ -31,7 +31,6 @@ public class PosterInteraction : MonoBehaviour
         {
             interactable.hoverEntered.AddListener(OnHoverEntered);
             interactable.hoverExited.AddListener(OnHoverExited);
-            // interactable.selectEntered.AddListener(OnTriggerPressed);
         }
         else
         {
