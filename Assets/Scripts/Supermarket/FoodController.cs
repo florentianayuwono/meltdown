@@ -14,7 +14,11 @@ public class FoodController : MonoBehaviour
     public Transform CorrectPlaceToThrow;
     public GameObject confettiPrefab;
     public DisasterEventType eventType;
-
+    
+    // Add this new field for the placement location
+    [Header("Correct Item Placement")]
+    public Transform correctItemFinalPosition; // Assign this in the inspector to the target position
+    
     private Vector3 originalPosition;
     private Quaternion originalRotation;
     private UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable grabInteractable;
@@ -54,7 +58,18 @@ public class FoodController : MonoBehaviour
                 }
                 else
                 {
-                    Destroy(gameObject);
+                    // Instead of destroying, move to final position and make non-interactable
+                    if (correctItemFinalPosition != null)
+                    {
+                        transform.position = correctItemFinalPosition.position;
+                        transform.rotation = correctItemFinalPosition.rotation;
+                        MakeNonInteractable();
+                    }
+                    else
+                    {
+                        // Fallback if position not assigned
+                        gameObject.SetActive(false);
+                    }
                 }
             }
             else if (status == FoodStatus.WrongChoiceChosen)
@@ -146,7 +161,44 @@ public class FoodController : MonoBehaviour
 
         yield return new WaitForSeconds(1.0f);
         Destroy(confetti, 1.0f);
-        Destroy(gameObject);
+        
+        // Instead of destroying, move the object to the target position
+        if (correctItemFinalPosition != null)
+        {
+            StartCoroutine(MoveToFinalPosition());
+        }
+        else
+        {
+            // Fallback if no position is assigned
+            gameObject.SetActive(false);
+        }
+    }
+    
+    private IEnumerator MoveToFinalPosition()
+    {
+        if (rb != null) rb.isKinematic = true;
+        
+        float duration = 0.5f;
+        float elapsed = 0f;
+        Vector3 startPos = transform.position;
+        Quaternion startRot = transform.rotation;
+        
+        while (elapsed < duration)
+        {
+            float t = elapsed / duration;
+            float smoothT = t * t * (3f - 2f * t); // Smoothstep interpolation
+            transform.position = Vector3.Lerp(startPos, correctItemFinalPosition.position, smoothT);
+            transform.rotation = Quaternion.Slerp(startRot, correctItemFinalPosition.rotation, smoothT);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+        
+        // Ensure exact final position and rotation
+        transform.position = correctItemFinalPosition.position;
+        transform.rotation = correctItemFinalPosition.rotation;
+        
+        // Make the object non-interactable in its final position
+        MakeNonInteractable();
     }
 
     private void SetSuccessUIText(FoodItem type)
@@ -156,10 +208,10 @@ public class FoodController : MonoBehaviour
         {
             case FoodItem.Tomatoes:
                 successMessage = @"Millions of perfectly edible fruits and vegetables are wasted every year just because they look imperfect. 
-By choosing the 'imperfect' tomato, you’ve helped prevent food waste and saved valuable resources like water, energy, and labor.";
+By choosing the 'imperfect' tomato, you've helped prevent food waste and saved valuable resources like water, energy, and labor.";
                 break;
             case FoodItem.Milk:
-                successMessage = @"By choosing the milk carton over the plastic bottle, you’ve helped reduce plastic waste and support more sustainable packaging.
+                successMessage = @"By choosing the milk carton over the plastic bottle, you've helped reduce plastic waste and support more sustainable packaging.
 Plastic waste lingers for centuries, but your choice today helps create a cleaner, greener future.";
                 break;
             case FoodItem.Meat:
@@ -171,11 +223,8 @@ Plastic waste lingers for centuries, but your choice today helps create a cleane
             default:
                 successMessage = @"You are correct because...";
                 break;
-
-
         }
         successUIText.text = successMessage;
-
     }
 
     private void DisableIncorrectFoodOption()
