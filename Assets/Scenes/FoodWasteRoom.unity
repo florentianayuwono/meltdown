@@ -4347,8 +4347,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodType: 6
-  CorrectPlaceToThrow: {fileID: 524313710}
-  IncorrectPlaceToThrow: {fileID: 1359252963}
+  CorrectPlaceAxis: {fileID: 524313710}
+  CorrectPlaceToThrow: {fileID: 1570221898}
+  IncorrectPlaceAxis: {fileID: 1359252963}
   IncorrectPlacements:
   - {fileID: 27593191}
   - {fileID: 1644593348}
@@ -5744,8 +5745,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodType: 7
-  CorrectPlaceToThrow: {fileID: 1644593348}
-  IncorrectPlaceToThrow: {fileID: 1359252963}
+  CorrectPlaceAxis: {fileID: 1644593348}
+  CorrectPlaceToThrow: {fileID: 1644593349}
+  IncorrectPlaceAxis: {fileID: 1359252963}
   IncorrectPlacements:
   - {fileID: 524313710}
   - {fileID: 27593191}
@@ -6491,8 +6493,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodType: 4
-  CorrectPlaceToThrow: {fileID: 1359252963}
-  IncorrectPlaceToThrow: {fileID: 1359252963}
+  CorrectPlaceAxis: {fileID: 1359252963}
+  CorrectPlaceToThrow: {fileID: 593719165}
+  IncorrectPlaceAxis: {fileID: 1359252963}
   IncorrectPlacements:
   - {fileID: 1644593348}
   - {fileID: 524313710}
@@ -7078,6 +7081,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1402750876}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1409468627 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6081966303601822800, guid: 8dea3515e49b0e84cbb2253db8f7a41a, type: 3}
+  m_PrefabInstance: {fileID: 27593190}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1451556239
 GameObject:
   m_ObjectHideFlags: 0
@@ -7678,8 +7686,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodType: 5
-  CorrectPlaceToThrow: {fileID: 27593191}
-  IncorrectPlaceToThrow: {fileID: 1359252963}
+  CorrectPlaceAxis: {fileID: 27593191}
+  CorrectPlaceToThrow: {fileID: 1409468627}
+  IncorrectPlaceAxis: {fileID: 1359252963}
   IncorrectPlacements:
   - {fileID: 1644593348}
   - {fileID: 524313710}
@@ -8164,6 +8173,11 @@ PrefabInstance:
 --- !u!4 &1644593348 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8187000183876803392, guid: 0c073c823aec9444baa8489a44179a20, type: 3}
+  m_PrefabInstance: {fileID: 1644593347}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1644593349 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2023332108257950763, guid: 0c073c823aec9444baa8489a44179a20, type: 3}
   m_PrefabInstance: {fileID: 1644593347}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1662317860

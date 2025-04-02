@@ -8,8 +8,9 @@ public class FWFoodController : MonoBehaviour
     public FoodItem foodType;
 
     [Header("References")]
-    public Transform CorrectPlaceToThrow;
-    public Transform IncorrectPlaceToThrow;
+    public Transform CorrectPlaceAxis;
+    public GameObject CorrectPlaceToThrow;
+    public Transform IncorrectPlaceAxis;
     public Transform[] IncorrectPlacements;
     public GameObject confettiPrefab;
     public DisasterEventType eventType;
@@ -82,7 +83,7 @@ public class FWFoodController : MonoBehaviour
     private void OnSelectExit(SelectExitEventArgs args)
     {
         Vector3 foodPos = transform.position;
-        Vector3 correctPos = CorrectPlaceToThrow.position;
+        Vector3 correctPos = CorrectPlaceAxis.position;
 
         float xThreshold = 0.5f;
         float zThreshold = 0.5f;
@@ -90,7 +91,7 @@ public class FWFoodController : MonoBehaviour
         bool isAboveCorrectXZ = Mathf.Abs(foodPos.x - correctPos.x) <= xThreshold &&
                              Mathf.Abs(foodPos.z - correctPos.z) <= zThreshold;
 
-        Vector3 incorrectPlace = IncorrectPlaceToThrow.position;
+        Vector3 incorrectPlace = IncorrectPlaceAxis.position;
 
         bool isAboveIncorrectXZ = Mathf.Abs(foodPos.x - incorrectPlace.x) <= xThreshold &&
                              Mathf.Abs(foodPos.z - incorrectPlace.z) <= zThreshold;
@@ -143,7 +144,6 @@ public class FWFoodController : MonoBehaviour
 
         StartCoroutine(UpdateCorrectChoice());
     }
-
     private IEnumerator UpdateCorrectChoice()
     {
         MakeNonInteractable();
@@ -157,7 +157,7 @@ public class FWFoodController : MonoBehaviour
         } else if (foodType == FoodItem.Eggshells || foodType == FoodItem.VegFruitSlices)
         {
             Destroy(gameObject); // destroy the game object
-            Destroy(CorrectPlaceToThrow);
+            Destroy(CorrectPlaceToThrow.gameObject); 
             successVersion.SetActive(true); // show the success version
 
         } else

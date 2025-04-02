@@ -217,8 +217,6 @@ public class ShoppingListController : MonoBehaviour
                 light.intensity = 0f;
             }
         }
-
-        Debug.Log("All lights turned off except for the special light.");
     }
 
     private IEnumerator PlayDoorOpenVoice()
